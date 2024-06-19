@@ -150,7 +150,7 @@ button:hover {
         font-size: 12px;
     }
 }
-
+    
 @media (max-width: 480px) {
     .display-box {
         padding: 3px;
