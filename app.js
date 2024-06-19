@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+    
 
     function saveDataToLocalStorage() {
         const displayData = [];
@@ -35,21 +36,21 @@ document.addEventListener('DOMContentLoaded', () => {
         displayBox.innerHTML = `
             <p>Имя: ${firstName}</p>
             <p>Фамилия: ${lastName}</p>
-            <label for="fine">Штраф:</label>
+          
             <input type="text" class="fine-input" name="fine" value="${fine}">
             <button class="save-fine-button">Сохранить Штраф</button>
             <p class="fine-text" style="display: ${fine ? 'block' : 'none'};">Штраф: ${fine}</p>
             <button class="delete-button">Удалить</button>
         `;
 
-        // Add event listener to delete button
+    
         const deleteButton = displayBox.querySelector('.delete-button');
         deleteButton.addEventListener('click', () => {
             displayContainer.removeChild(displayBox);
             saveDataToLocalStorage();
         });
 
-        // Add event listener to save fine button
+       
         const saveFineButton = displayBox.querySelector('.save-fine-button');
         saveFineButton.addEventListener('click', () => {
             const fineInput = displayBox.querySelector('.fine-input');
@@ -63,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         displayContainer.appendChild(displayBox);
 
-        // Set a timeout to change the color to red after 1 minute
+     
         const timeRemaining = 60 * 1000 - (Date.now() - timestamp);
         setTimeout(() => {
             displayBox.classList.add('red');
@@ -77,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const lastName = lastNameInput.value;
         if (firstName.trim() !== "" && lastName.trim() !== "") {
             createDisplayBox(firstName, lastName);
-            firstNameInput.value = ''; // Clear the first name input field after saving
-            lastNameInput.value = ''; // Clear the last name input field after saving
+            firstNameInput.value = ''; 
+            lastNameInput.value = ''; 
         }
     });
 
