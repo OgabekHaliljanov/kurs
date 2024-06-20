@@ -12,9 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             displayData.forEach(item => {
                 createDisplayBox(item.firstName, item.lastName, item.fine, item.timestamp);
             });
-        }
-    }
-
+        }}
     function saveDataToLocalStorage() {
         const displayData = [];
         const displayBoxes = displayContainer.querySelectorAll('.display-box');
@@ -78,5 +76,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    loadSavedData();
-});
+    loadSavedData();});
