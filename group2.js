@@ -14,17 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
-    saveButton.addEventListener('click', () => {
-        const firstName = firstNameInput.value.trim();
-        const lastName = lastNameInput.value.trim();
-        if (firstName !== "" && lastName !== "") {
-            const data = { firstName, lastName };
-            localStorage.setItem('oquvchiData', JSON.stringify(data));
-            window.location.href = 'oquvchi.html';
-        } else {
-            alert('Пожалуйста, заполните все поля.');
-        }
-    });
 
     function saveDataToLocalStorage() {
         const displayData = [];
@@ -84,13 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const lastName = lastNameInput.value.trim();
         if (firstName !== "" && lastName !== "") {
             createDisplayBox(firstName, lastName);
-            firstNameInput.value = ''; 
-            lastNameInput.value = ''; 
+            firstNameInput.value = '';
+            lastNameInput.value = '';
         }
     });
 
     loadSavedData();
 });
-
-
-  
